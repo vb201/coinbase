@@ -5,9 +5,9 @@ export const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: #0a0b0d;
-  color: #000;
+  color: #fff;
 `;
 
 export const MainContainer = styled.div`
-  display: flex;
+  flex: 1;
 `;

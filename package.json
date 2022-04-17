@@ -12,6 +12,7 @@
     "@3rdweb/hooks": "^1.9.2",
     "@3rdweb/react": "^1.9.3",
     "@3rdweb/sdk": "^1.42.0",
+    "babel-plugin-styled-components": "^2.0.7",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",

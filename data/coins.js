@@ -1,69 +1,81 @@
-import btcLogo from '../assets/btc.png'
-import maticLogo from '../assets/matic.png'
-import dogeLogo from '../assets/doge.png'
-import ethLogo from '../assets/eth.png'
-import lunaLogo from '../assets/luna.png'
-import solLogo from '../assets/sol.png'
+import btcLogo from "../assets/images/btc.png";
+import maticLogo from "../assets/images/matic.png";
+import dogeLogo from "../assets/images/doge.png";
+import ethLogo from "../assets/images/eth.png";
+import lunaLogo from "../assets/images/luna.png";
+import solLogo from "../assets/images/sol.png";
 
 export const coins = [
   {
-    name: 'Bitcoin',
-    sign: 'BTC',
+    name: "Bitcoin",
+    symbol: "BTC",
     logo: btcLogo,
     balanceUsd: 230.32,
+    balanceINR: 17580.69,
     balanceCoin: 6.35667736,
     priceUsd: 5.32,
+    priceINR: 406.08,
     change: -4.74,
     allocation: 41.89,
   },
   {
-    name: 'Solana',
-    sign: 'CRV',
+    name: "Solana",
+    symbol: "CRV",
     logo: solLogo,
     balanceUsd: 120.2,
+    balanceINR: 9175.06,
     balanceCoin: 6.35667736,
     priceUsd: 5.32,
+    priceINR: 406.08,
     change: 4.74,
     allocation: 41.89,
   },
   {
-    name: 'Polygon',
-    sign: 'MATIC',
+    name: "Polygon",
+    symbol: "MATIC",
     logo: maticLogo,
     balanceUsd: 1.2,
+    balanceINR: 91.6,
     balanceCoin: 3.35664236,
     priceUsd: 5.22,
+    priceINR: 398.45,
     change: -5.24,
     allocation: 17.89,
   },
   {
-    name: 'Ethereum',
-    sign: 'ETH',
+    name: "Ethereum",
+    symbol: "ETH",
     logo: ethLogo,
     balanceUsd: 1.2,
+    balanceINR: 91.6,
     balanceCoin: 3.35664236,
     priceUsd: 5.22,
+    priceINR: 398.45,
     change: 6.24,
     allocation: 17.89,
   },
   {
-    name: 'Terra',
-    sign: 'LUNA',
+    name: "Terra",
+    symbol: "LUNA",
     logo: lunaLogo,
     balanceUsd: 1.2,
+    balanceINR: 91.6,
     balanceCoin: 3.35664236,
     priceUsd: 5.22,
+    priceINR: 398.45,
     change: -5.24,
     allocation: 17.89,
   },
   {
-    name: 'Dogecoin 🌙',
-    sign: 'DOGE',
+    name: "Dogecoin 🌙",
+    symbol: "DOGE",
     logo: dogeLogo,
     balanceUsd: 1.2,
+    balanceINR: 91.6,
     balanceCoin: 3.35664236,
     priceUsd: 5.22,
+    priceINR: 398.45,
     change: 200.24,
     allocation: 17.89,
   },
-]
+];
