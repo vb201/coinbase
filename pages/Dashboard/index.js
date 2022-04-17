@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../components/Header";
+import Header from "../../components/Header";
+import { MainContainer, Wrapper } from "./Dashboard.styles";
 
 const Dashboard = ({ address }) => {
   return;
@@ -12,15 +13,3 @@ const Dashboard = ({ address }) => {
 };
 
 export default Dashboard;
-
-const Wrapper = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  background-color: #0a0b0d;
-  color: #000;
-`;
-
-const MainContainer = styled.div`
-  display: flex;
-`;
