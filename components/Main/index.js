@@ -1,5 +1,6 @@
 import React from "react";
 import Portfolio from "../Portfolio";
+import PromoCards from "../PromoCards";
 import { Wrapper } from "./Main.styles";
 
 const Main = ({ twTokens, sanityTokens, walletAddress }) => {
@@ -10,6 +11,7 @@ const Main = ({ twTokens, sanityTokens, walletAddress }) => {
         sanityTokens={sanityTokens}
         walletAddress={walletAddress}
       />
+      <PromoCards />
     </Wrapper>
   );
 };

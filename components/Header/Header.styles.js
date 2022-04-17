@@ -39,7 +39,6 @@ export const WalletLinkTitle = styled.div`
 `;
 export const WalletAddress = styled.div`
   font-size: 0.8rem;
-  /* color: #8a919e; */
 `;
 
 export const Button = styled.div`

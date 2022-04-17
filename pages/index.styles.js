@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   color: #fff;
   display: grid;
   place-items: center;
+  overflow: hidden;
 `;
 
 export const WalletConnect = styled.div`
