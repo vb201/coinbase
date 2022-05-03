@@ -5,7 +5,6 @@ import styled from "styled-components";
 import Header from "../../components/Header/";
 import Main from "../../components/Main";
 import Sidebar from "../../components/Sidebar";
-import { MainContainer, Wrapper } from "./Dashboard.styles";
 
 const Dashboard = ({ address }) => {
   const [twTokens, setTwTokens] = useState([]);
@@ -69,3 +68,15 @@ const Dashboard = ({ address }) => {
 export async function getServerSideProps(context) {}
 
 export default Dashboard;
+
+const Wrapper = styled.div`
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0a0b0d;
+  color: #fff;
+`;
+
+const MainContainer = styled.div`
+  flex: 1;
+`;
