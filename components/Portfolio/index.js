@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 import {
@@ -19,7 +19,35 @@ import { coins } from "../../data/coins";
 import Coin from "../Coin";
 import BalanceChart from "../Chart";
 
-const Portfolio = () => {
+const Portfolio = ({ twTokens, sanityTokens, walletAddress }) => {
+  const [walletBalance, setWalletBalance] = useState(0);
+  const [sender] = useState(walletAddress);
+
+  const getBalance = async (activeTwToken) => {
+    const balance = await activeTwToken.balanceOf(sender);
+
+    return parseInt(balance.displayValue);
+  };
+
+  useEffect(() => {
+    const calculateTotalBalance = async () => {
+      setWalletBalance(0);
+
+      sanityTokens.map(async (token) => {
+        const currentTwToken = twTokens.filter(
+          (twToken) => twToken.address === token.contractAddress
+        );
+
+        const balance = await getBalance(currentTwToken[0]);
+        setWalletBalance((prevState) => prevState + balance * token.usdPrice);
+      });
+    };
+
+    if (sanityTokens.length > 0 && twTokens.length > 0) {
+      calculateTotalBalance();
+    }
+  }, [twTokens, sanityTokens]);
+
   return (
     <Wrapper>
       <Content>
@@ -28,8 +56,7 @@ const Portfolio = () => {
             <BalanceTitle>Portfolio balance</BalanceTitle>
             <BalanceValue>
               {"₹"}
-              {/* {walletBalance.toLocaleString()} */}
-              475,500
+              {walletBalance.toLocaleString("INR")}
             </BalanceValue>
           </Balance>
           <BalanceChart />
@@ -46,7 +73,7 @@ const Portfolio = () => {
                 <div style={{ flex: 2 }}>Balance</div>
                 <div style={{ flex: 1 }}>Price</div>
                 <div style={{ flex: 1 }}>Allocation</div>
-                <div style={{ flex: 0 }}>
+                <div style={{ flex: 0, color: "#0a0b0d" }}>
                   <BsThreeDotsVertical />
                 </div>
               </TableRow>

@@ -52,3 +52,7 @@ export const Button = styled.div`
     cursor: pointer;
   }
 `;
+
+export const Separator = styled.div``;
+
+export const ProfileIcon = styled.div``;
