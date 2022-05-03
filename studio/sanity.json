@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "coinbase"
-  },
   "api": {
     "projectId": "9bpufwcy",
     "dataset": "production"
+  },
+  "project": {
+    "name": "coinbase"
   },
   "plugins": [
     "@sanity/base",

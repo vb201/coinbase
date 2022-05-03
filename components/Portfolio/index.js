@@ -25,21 +25,20 @@ const Portfolio = ({ twTokens, sanityTokens, walletAddress }) => {
 
   const getBalance = async (activeTwToken) => {
     const balance = await activeTwToken.balanceOf(sender);
-
     return parseInt(balance.displayValue);
   };
 
   useEffect(() => {
     const calculateTotalBalance = async () => {
       setWalletBalance(0);
-
       sanityTokens.map(async (token) => {
         const currentTwToken = twTokens.filter(
           (twToken) => twToken.address === token.contractAddress
         );
 
         const balance = await getBalance(currentTwToken[0]);
-        setWalletBalance((prevState) => prevState + balance * token.usdPrice);
+
+        setWalletBalance((prevState) => prevState + balance * token.price);
       });
     };
 
@@ -52,13 +51,15 @@ const Portfolio = ({ twTokens, sanityTokens, walletAddress }) => {
     <Wrapper>
       <Content>
         <Chart>
-          <Balance>
-            <BalanceTitle>Portfolio balance</BalanceTitle>
-            <BalanceValue>
-              {"₹"}
-              {walletBalance.toLocaleString("INR")}
-            </BalanceValue>
-          </Balance>
+          <div>
+            <Balance>
+              <BalanceTitle>Portfolio balance</BalanceTitle>
+              <BalanceValue>
+                {" INR "}
+                {walletBalance.toLocaleString("INR")}
+              </BalanceValue>
+            </Balance>
+          </div>
           <BalanceChart />
         </Chart>
         <PortfolioTable>
@@ -80,8 +81,8 @@ const Portfolio = ({ twTokens, sanityTokens, walletAddress }) => {
             </TableItem>
             <Divider />
             <div>
-              {coins.map((coin, index) => (
-                <div key={index}>
+              {coins.map((coin) => (
+                <div key={coin.name}>
                   <Coin coin={coin} />
                   <Divider />
                 </div>

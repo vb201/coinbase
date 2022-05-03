@@ -33,8 +33,8 @@ export default createSchema({
           type: "number",
         },
         {
-          title: "Contact Address",
-          name: "contactAddress",
+          title: "Contract Address",
+          name: "contractAddress",
           type: "string",
         },
         {

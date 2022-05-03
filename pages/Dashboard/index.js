@@ -14,7 +14,7 @@ const Dashboard = ({ address }) => {
   const getCoins = async () => {
     try {
       const coins = await fetch(
-        "https://9bpufwcy.api.sanity.io/v2021-10-21/data/listen/production?query=*%5B_type%3D%3D'coins'%5D%20%7B%0A%20%20name%2C%0A%20%20price%2C%0A%20%20contactAddress%2C%0A%20%20symbol%2C%0A%20%20logo%0A%7D"
+        "https://9bpufwcy.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20%22coins%22%5D%20%7B%0A%20%20name%2C%0A%20%20price%2C%0A%20%20logo%2C%0A%20%20symbol%2C%0A%20%20contractAddress%0A%7D"
       );
       const tempSanityTokens = await coins.json();
 
@@ -33,7 +33,9 @@ const Dashboard = ({ address }) => {
       const sdk = new ThirdwebSDK(
         new ethers.Wallet(
           process.env.NEXT_PUBLIC_METAMASK_PRIVATE_KEY,
-          ethers.getDefaultProvider("https://rpc-mumbai.maticvigil.com")
+          ethers.getDefaultProvider(
+            "https://rinkeby.infura.io/v3/8e080092eab149b7a3be020b831c2135"
+          )
         )
       );
 
